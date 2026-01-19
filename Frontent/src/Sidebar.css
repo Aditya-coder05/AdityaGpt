@@ -1,0 +1,139 @@
+
+.sidebar {
+    background-color: #171717;
+    color: #b4b4b4;
+    height: 100vh;                 /* ✅ Sidebar ko full screen height di */
+    width: 320px;
+
+    display: flex;
+    flex-direction: column;        /* ✅ Vertical layout (button → history → sign) */
+
+    /* ❌ REMOVED:
+       justify-content: space-between;
+       Reason: isse history section galat tarike se stretch ho raha tha
+    */
+}
+
+
+button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 10px;
+    padding: 10px;
+
+    border-radius: 5px;
+    background-color: transparent;
+    border: solid 0.5px rgba(255, 255, 255, 0.5);
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(180, 180, 180, 0.05);
+}
+
+.logo {
+    height: 25px;
+    width: 25px;
+
+    background-color: #fff;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+button span {
+    font-size: 20px;
+}
+
+
+.history {
+    margin: 10px;
+    padding: 10px;
+
+    flex: 1;                       /* ✅ CHANGE:
+                                       Sirf bachi hui space lega
+                                       (button + sign ke baad) */
+
+    overflow-y: auto;              /* ✅ CHANGE:
+                                       Chats zyada ho jaaye → yahin scroll hoga */
+}
+
+
+.history li {
+    list-style-type: none;
+    cursor: pointer;
+
+    padding: 6px 8px;
+    margin-bottom: 0.3rem;
+
+    font-size: 14px;
+
+    /* ✅ CHANGE:
+       Long text sidebar ko todta tha
+       Ab ek line me rahega + "..." show karega */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    position: relative;
+}
+
+.history li:hover {
+    background-color: rgba(180, 180, 180, 0.05);
+    border-radius: 10px;
+}
+
+
+
+.sign {
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+    text-align: center;
+    border-top: solid 0.25px rgba(255, 255, 255, 0.5);
+}
+
+
+/* Scroll bar color changes */
+::-webkit-scrollbar {
+    width: 8px;              /* scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;     /* track (background) */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #121212;  /* 🔥 black thumb */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #121212;  /* hover thoda light */
+}
+ 
+
+/* delete ki position ekdum corner mein  (Imp concept) ki ek position ko last mein fix kese krte hai */
+.fa-trash {                  
+    opacity: 0;
+    position: absolute;
+    right: 0;
+}
+
+
+.history li:hover .fa-trash {
+    opacity: 1;
+    color: #fff;
+}
+
+.fa-trash:hover {
+    color: #f87171 !important;
+}
+
+
+.highlighted {
+    background-color: rgba(180, 180, 180, 0.05);
+    border-radius: 10px;
+}
