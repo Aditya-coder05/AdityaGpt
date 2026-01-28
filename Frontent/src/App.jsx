@@ -33,6 +33,9 @@ function App() {
         <MyContext.Provider value = {providerValues}>
 
           <Sidebar show={showSidebar} />
+
+          {showSidebar && <div className="overlay" onClick={() => setShowSidebar(false)}></div>}
+
           <ChatWindow onMenuClick={() => setShowSidebar(!showSidebar)}/>
 
           {/* <Sidebar></Sidebar>
