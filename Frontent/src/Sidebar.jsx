@@ -3,7 +3,7 @@ import {useContext , useEffect} from "react";
 import {MyContext} from "./MyContext.jsx";
 import {v1 as uuidv1} from "uuid";
 
-function Sidebar() {
+function Sidebar({ show }) {
 
     const{allThreads , setAllThreads , currThreadId , setNewChat , setPrompt , setReply , setCurrThreadId , setPrevChats} = useContext(MyContext);
 
@@ -69,7 +69,7 @@ function Sidebar() {
 
 
     return(
-        <section className="sidebar">
+        <section className={`sidebar ${show ? "show" : ""}`}>
             <button  onClick={createNewChat}>
             <img src="/assets/test.png" alt="gpt logo" className="logo"></img>
             <span><i className="fa-solid fa-pen-to-square"></i></span>

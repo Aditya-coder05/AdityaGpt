@@ -123,3 +123,18 @@ input:focus {
     background-color: rgba(180, 180, 180, 0.1);
     border-radius: 6px;
 }
+
+
+/* sidebar hamburger menu and responsiveness */
+.menu {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: block;
+  }
+}

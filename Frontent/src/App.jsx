@@ -6,6 +6,7 @@ import { useState } from 'react';
 import {v1 as uuidv1} from "uuid";
 
 
+
 function App() {
   const [prompt , setPrompt] = useState("");
   const [reply , setReply] = useState(null);
@@ -23,13 +24,19 @@ function App() {
     allThreads , setAllThreads,
   };
 
+  const [showSidebar, setShowSidebar] = useState(false);
+
+
   return (
     <>
       <div className = 'app'>
         <MyContext.Provider value = {providerValues}>
 
-          <Sidebar></Sidebar>
-          <ChatWindow></ChatWindow>
+          <Sidebar show={showSidebar} />
+          <ChatWindow onMenuClick={() => setShowSidebar(!showSidebar)}/>
+
+          {/* <Sidebar></Sidebar>
+          <ChatWindow></ChatWindow> */}
           
           </MyContext.Provider>        
       </div>

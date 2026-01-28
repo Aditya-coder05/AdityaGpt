@@ -4,7 +4,7 @@ import {MyContext} from "./MyContext.jsx";
 import {useContext,useState,useEffect} from "react";
 import {ScaleLoader} from "react-spinners";
 
-function ChatWindow() {
+function ChatWindow({ onMenuClick }) {
     const {prompt, setPrompt, reply, setReply, currThreadId,setPrevChats , setNewChat} = useContext(MyContext);
     const [loading , setLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -63,6 +63,9 @@ function ChatWindow() {
     return(
         <div className="chatWindow">
             <div className="navbar">
+
+                <i className="fa-solid fa-bars menu" onClick={onMenuClick}></i>
+
 
                 <span>AdityaGPT <i className="fa-solid fa-chevron-down"></i></span>
                 
