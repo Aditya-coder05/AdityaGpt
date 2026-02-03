@@ -61,3 +61,37 @@
 }
 
 
+
+/* ===== FIX 1: Start a new chat center mein ===== */
+.chats {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 14px 90px;  /* top | left-right | bottom */
+  box-sizing: border-box;
+}
+
+/* Start a new chat center alignment */
+.chats h1 {
+  height: 100%;
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  text-align: center;
+  font-size: 26px;
+  margin: 0;
+}
+
+/* ===== FIX 2: Top text cut hona band ===== */
+.gptDiv,
+.userDiv {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* ===== FIX 3: Bottom text cut hona band (input ke upar gap) ===== */
+.chatInput {
+  padding-bottom: 14px;
+}
+
+
+

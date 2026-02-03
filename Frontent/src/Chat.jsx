@@ -34,7 +34,16 @@ function Chat() {
 
     return (
         <>
-            {newChat && <h1>Start a new chat!</h1>}
+            {newChat && <h1 style={{
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      fontSize: "26px",
+      margin: "0",
+      color: "#fff",
+                      }} >Start a new chat!</h1>}
 
             <div className="chats">
                 {prevChats?.slice(0,-1).map((chat, idx) => (
