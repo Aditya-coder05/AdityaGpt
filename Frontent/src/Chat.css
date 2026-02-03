@@ -34,3 +34,30 @@
 }
 
 
+
+/* output small nhi ho rha toh */
+
+/* Output text small & readable */
+.gptDiv, .userDiv {
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+/* Code block fit on mobile */
+.gptDiv pre {
+  font-size: 12px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .gptDiv, .userDiv {
+    font-size: 13px;
+  }
+  .gptDiv pre {
+    font-size: 11px;
+  }
+}
+
+

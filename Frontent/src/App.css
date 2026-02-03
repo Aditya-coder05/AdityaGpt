@@ -13,6 +13,9 @@ body{
   display: flex;
 }
 
+
+/* sidebar hamburger menu and responsiveness */
+
 .overlay {
   position: fixed;
   inset: 0;
